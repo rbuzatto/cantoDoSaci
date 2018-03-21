@@ -1,0 +1,23 @@
+.header {
+    height: 100vh;
+    background-image: linear-gradient(105deg,
+    rgba($color-primary-dark, .85),
+    rgba($color-primary-dark, .85) 50%,
+    rgba($color-black, 0.5) 50%,
+    rgba($color-black, 0.5)),
+    url(../img/canto_frente.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+
+    &__title-box {
+        position: absolute;
+        text-align: center;
+        top:50%;
+        left:50%;
+        transform: translate(-50%,-50%);
+        
+    }
+
+}

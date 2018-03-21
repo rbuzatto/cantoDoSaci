@@ -1,0 +1,325 @@
+.gallery {
+
+    &__side-options,
+    &__box {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+        height: 100%;
+    }
+
+    &__side-options {
+        position: relative;
+        // display: none;
+        width: 10rem;
+        z-index: 3;
+
+        @include respond(xxs-phone) {
+            width: 6rem;
+            padding: 2rem 0; 
+        }
+
+        // @include respond(xxs-phone) {
+        //     width: 0;
+        //     overflow: hidden;
+        // }
+
+        &__box {
+            height: 100%;
+        }
+
+        &__button {            
+            @include absCenter;  
+            width: 5rem;
+            height: 5rem;
+            border-radius: 100rem;
+            background-image: linear-gradient(to right, 
+                $color-logo-bkgd,
+                $color-primary-light);
+            border: 2px solid $color-primary;
+            overflow: hidden;
+            
+            @include respond(xxs-phone) {
+                width: 3rem;
+                height: 3rem; 
+            }
+
+            &__box {
+                margin-left: -2px; // arrumar o deslocamento causado pela borda do button
+                margin-top: -2px;
+                width: 15rem;
+                height: 5rem;
+                transition: .4s ease-in-out;
+
+                @include respond(xxs-phone) {
+                    width: 3rem;
+                    height: 3rem; 
+                }
+
+                // 10rem é o width total menos o width do bloco que está floated right
+                &:hover {
+                    transform: translateX(-10rem);
+
+                    @include respond(xxs-phone) {
+                        transform: translateX(0);
+                    }
+                }
+            }
+
+            &__container {            
+                position: relative;
+                display: block;
+                height: 33.33%;
+                padding: 2rem;
+
+                @include respond(xxs-phone) {
+                    padding: 1.5rem; 
+                }
+
+            }
+
+            &__icon,
+            &__name {
+                @include absCenter;
+                 color: $color-primary-dark;
+            }
+
+            &__icon {
+                font-size: 2rem;
+
+                @include respond(xxs-phone) {
+                    font-size: 1.4rem; 
+                }
+            }
+
+            &__name {
+                font-size: .8rem;
+            }
+
+            &__block--i,
+            &__block--name {
+                position: relative;
+                width: 5rem;
+                height: 100%;
+
+                @include respond(xxs-phone) {
+                    width: 100%;
+                }
+            }
+
+            &__block--i {float: left;}
+            &__block--name{float: right;}
+
+        }
+
+    }
+
+    &__box {
+        width: 100%;
+        transform: translateY(0);
+        transition: .5s ease-in;
+
+        &--trans {
+            transform: translateY(100%); // aqui eu tinha colocado 300px antes, 100% é melhor
+        }
+
+    }
+
+    &__main,
+    &__page { 
+        height: 100%;
+    }
+
+    &__main {
+        background-image: linear-gradient(to bottom,
+        rgba($color-primary-dark, 1),
+        rgba($color-primary-light, 1));
+        position: relative;
+        z-index: 3;
+
+        &__img {
+            height: 100%;
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            transition: filter 2s;
+            transition: opacity 2s; 
+            filter: blur(5px) brightness(160%);
+            
+            &:hover {
+                opacity: 1;
+                filter: blur(0px) brightness(100%);
+            }
+        }
+
+        &__page-box {
+            position: absolute;
+            width: 28rem;
+            height: 28rem;
+            transform: translateX(-50%);
+
+            @include respond(tb-landscape) {
+                width: 22rem;
+                height: 22rem;
+            }
+
+            @include respond(tb-large) {
+                width: 17rem;
+                height: 17rem;
+            }
+
+            @include respond(maxW-680) {
+                width: 15rem;
+                height: 15rem;
+            }
+
+            @include respond(s-phone) {
+                width: 11rem;
+                height: 11rem;
+            }
+
+            @include respond(xxs-phone) {
+                width: 8.5rem;
+                height: 8.5rem;
+            }
+
+            &__content {
+                @include absCenter;
+            }
+
+
+            &__shape {
+                position: relative;
+                background-color: $color-logo-bkgd;
+                width: 100%;
+                height: 100%;
+                -webkit-clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+                clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+                z-index: 1;
+                transition: all .4s;
+
+                &:hover {
+                    transform: rotate(720deg);
+                }
+
+            }
+
+            &--1 {
+                top: 45%;
+                left: 25%;                                            
+            }
+
+            &--2 {
+                top: 15%;
+                left: 50%;  
+            }
+
+            &--3 {
+                top: 45%;
+                left: 75%;  
+            }
+        }
+    }
+
+    &__page {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: -1;
+        box-shadow:4rem 2rem .8rem rgba($color-black, .5);
+        transform: translateX(0);
+        transition: transform 2s;
+
+        &--move {transform: translateX(100%)}
+
+        &--1,
+        &--2,
+        &--3 {
+            background-size: cover;
+            background-position: center;
+        }
+
+        &--1 {
+            background-image: 
+                linear-gradient(to right, 
+                rgba($color-black, .6),
+                rgba($color-black, .6)),
+                url(../img/culture_01.jpg);
+        }
+
+        &--2 {
+            background-image: 
+                linear-gradient(to right, 
+                rgba($color-black, .6),
+                rgba($color-black, .6)),
+                url(../img/canto_02.jpg);
+        }
+
+        &--3 {
+            background-image: 
+                linear-gradient(to right, 
+                rgba($color-black, .6),
+                rgba($color-black, .6)),
+                url(../img/dishes_01.jpg);
+        }
+    }
+
+    &__close {
+        
+        &,
+        &:link,
+        &:visited {
+            position: absolute;
+            margin-top: 3rem;
+            top: -100%;
+            right: 3rem;
+            width: 5rem;
+            height: 5rem;
+            z-index: 2;
+            background-image: linear-gradient(to right, 
+                $color-logo-bkgd,
+                $color-primary-light);
+            border-radius: 10rem;
+            box-shadow: -1px 2px 3px rgba($color-primary, .4);
+            transition: all .3s;
+
+            @include respond(xs-phone) {
+                margin-top: 2rem;
+                right: 2rem;
+                width: 4rem;
+                height: 4rem;
+                }
+
+            @include respond(xxs-phone) {
+            margin-top: 2rem;
+            right: 2rem;
+            width: 3rem;
+            height: 3rem;
+            }
+        }
+
+        &:hover {
+            transform: translateY(-5px);
+            box-shadow: -1px 6px 6px rgba($color-primary, .4);
+        }
+
+        &:focus,
+        &:active {
+            transform: translateY(-2px);
+            box-shadow: -1px 1px 3px rgba($color-primary, .4);
+        }
+
+        &__icon {
+            color: $color-primary-dark;
+            font-size: 2rem;
+            @include absCenter;
+
+            @include respond(xs-phone) {font-size: 1.6rem;}
+            @include respond(xxs-phone) {font-size: 1.4rem;}
+        }
+    }
+}

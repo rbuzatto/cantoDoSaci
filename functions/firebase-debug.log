@@ -1,0 +1,221 @@
+[debug] [2018-03-17T06:14:16.518Z] ----------------------------------------------------------------------
+[debug] [2018-03-17T06:14:16.520Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\rafael\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve --only hosting
+[debug] [2018-03-17T06:14:16.521Z] CLI Version:   3.17.4
+[debug] [2018-03-17T06:14:16.521Z] Platform:      win32
+[debug] [2018-03-17T06:14:16.521Z] Node Version:  v8.9.3
+[debug] [2018-03-17T06:14:16.521Z] Time:          Sat Mar 17 2018 03:14:16 GMT-0300 (Hora oficial do Brasil)
+[debug] [2018-03-17T06:14:16.521Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-03-17T06:14:16.532Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-03-17T06:14:16.532Z] > authorizing via signed-in user
+[debug] [2018-03-17T06:14:16.534Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/canto-do-saci  
+  
+ Sat Mar 17 2018 03:14:16 GMT-0300 (Hora oficial do Brasil)
+[debug] [2018-03-17T06:14:17.670Z] <<< HTTP RESPONSE 200
+[debug] [2018-03-17T06:14:17.671Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/canto-do-saci/tokens  
+  
+ Sat Mar 17 2018 03:14:17 GMT-0300 (Hora oficial do Brasil)
+[debug] [2018-03-17T06:14:18.402Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\rafael\Desktop\Udemy projects\CantoSaci-firebase'...
+[info] 
+[debug] [2018-03-17T06:14:18.406Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/canto-do-saci  
+  
+ Sat Mar 17 2018 03:14:18 GMT-0300 (Hora oficial do Brasil)
+[debug] [2018-03-17T06:14:19.278Z] <<< HTTP RESPONSE 200
+[debug] [2018-03-17T06:14:19.278Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/958552256960/clients/_:getWebAppConfig  
+  
+ Sat Mar 17 2018 03:14:19 GMT-0300 (Hora oficial do Brasil)
+[debug] [2018-03-17T06:14:20.798Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] +  hosting: Local server: http://localhost:5000
+
+[debug] [2018-03-17T18:52:06.444Z] ----------------------------------------------------------------------
+[debug] [2018-03-17T18:52:06.447Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\rafael\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase deploy
+[debug] [2018-03-17T18:52:06.447Z] CLI Version:   3.17.4
+[debug] [2018-03-17T18:52:06.447Z] Platform:      win32
+[debug] [2018-03-17T18:52:06.447Z] Node Version:  v8.9.3
+[debug] [2018-03-17T18:52:06.448Z] Time:          Sat Mar 17 2018 15:52:06 GMT-0300 (Hora oficial do Brasil)
+[debug] [2018-03-17T18:52:06.448Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-03-17T18:52:06.461Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-03-17T18:52:06.461Z] > authorizing via signed-in user
+[debug] [2018-03-17T18:52:06.463Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-03-17T18:52:06.463Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ { refresh_token: '1/Kbtv3aiKVRXBSl1_j6BeHp0rHNfgfm6jZU6Pi-wtkciHRDoKK5xw8x7ered78qIS',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Sat Mar 17 2018 15:52:06 GMT-0300 (Hora oficial do Brasil)
+[debug] [2018-03-17T18:52:06.891Z] <<< HTTP RESPONSE 200
+[debug] [2018-03-17T18:52:06.905Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/canto-do-saci  
+  
+ Sat Mar 17 2018 15:52:06 GMT-0300 (Hora oficial do Brasil)
+[debug] [2018-03-17T18:52:07.946Z] <<< HTTP RESPONSE 200
+[debug] [2018-03-17T18:52:07.947Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/canto-do-saci/tokens  
+  
+ Sat Mar 17 2018 15:52:07 GMT-0300 (Hora oficial do Brasil)
+[debug] [2018-03-17T18:52:08.634Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'canto-do-saci'...
+[info] 
+[info] i  deploying functions, hosting
+[info] Running command: npm --prefix ./functions run lint
+[info] +  functions: Finished running predeploy script.
+[debug] [2018-03-17T18:52:19.655Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "./node_modules/.bin/eslint .",
+    "serve": "firebase serve --only functions",
+    "shell": "firebase experimental:functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3",
+    "firebase-admin": "~5.8.1",
+    "firebase-functions": "^0.8.1",
+    "nodemailer": "^4.6.3"
+  },
+  "devDependencies": {
+    "eslint": "^4.12.0",
+    "eslint-plugin-promise": "^3.6.0"
+  },
+  "private": true
+}
+[info] i  functions: ensuring necessary APIs are enabled...
+[debug] [2018-03-17T18:52:19.657Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/cloudfunctions.googleapis.com/projectSettings/canto-do-saci?view=CONSUMER_VIEW  
+  
+ Sat Mar 17 2018 15:52:19 GMT-0300 (Hora oficial do Brasil)
+[debug] [2018-03-17T18:52:19.658Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/runtimeconfig.googleapis.com/projectSettings/canto-do-saci?view=CONSUMER_VIEW  
+  
+ Sat Mar 17 2018 15:52:19 GMT-0300 (Hora oficial do Brasil)
+[debug] [2018-03-17T18:52:20.958Z] <<< HTTP RESPONSE 200
+[debug] [2018-03-17T18:52:20.981Z] <<< HTTP RESPONSE 200
+[info] +  functions: all necessary APIs are enabled
+[debug] [2018-03-17T18:52:20.984Z] >>> HTTP REQUEST GET https://appengine.googleapis.com/v1/apps/canto-do-saci  
+  
+ Sat Mar 17 2018 15:52:20 GMT-0300 (Hora oficial do Brasil)
+[debug] [2018-03-17T18:52:20.984Z] >>> HTTP REQUEST GET https://apikeys.googleapis.com/v1/projects/canto-do-saci/apiKeys  
+  
+ Sat Mar 17 2018 15:52:20 GMT-0300 (Hora oficial do Brasil)
+[debug] [2018-03-17T18:52:21.920Z] <<< HTTP RESPONSE 200
+[debug] [2018-03-17T18:52:22.167Z] <<< HTTP RESPONSE 200
+[info] i  functions: preparing functions directory for uploading...
+[debug] [2018-03-17T18:52:22.175Z] >>> HTTP REQUEST GET https://runtimeconfig.googleapis.com/v1beta1/projects/canto-do-saci/configs  
+  
+ Sat Mar 17 2018 15:52:22 GMT-0300 (Hora oficial do Brasil)
+[debug] [2018-03-17T18:52:22.736Z] <<< HTTP RESPONSE 200
+[info] i  functions: packaged functions (43.09 KB) for uploading
+[debug] [2018-03-17T18:52:27.677Z] >>> HTTP REQUEST GET https://www.googleapis.com/storage/v1/b/staging.canto-do-saci.appspot.com  
+  
+ Sat Mar 17 2018 15:52:27 GMT-0300 (Hora oficial do Brasil)
+[debug] [2018-03-17T18:52:27.993Z] <<< HTTP RESPONSE 200
+[debug] [2018-03-17T18:52:27.994Z] >>> HTTP REQUEST POST https://www.googleapis.com/upload/storage/v1/b/staging.canto-do-saci.appspot.com/o?uploadType=media&name=firebase-functions-source  
+ ReadStream {
+  _readableState: 
+   ReadableState {
+     objectMode: false,
+     highWaterMark: 65536,
+     buffer: BufferList { head: [Object], tail: [Object], length: 1 },
+     length: 44123,
+     pipes: null,
+     pipesCount: 0,
+     flowing: null,
+     ended: true,
+     endEmitted: false,
+     reading: false,
+     sync: false,
+     needReadable: false,
+     emittedReadable: true,
+     readableListening: false,
+     resumeScheduled: false,
+     destroyed: false,
+     defaultEncoding: 'utf8',
+     awaitDrain: 0,
+     readingMore: false,
+     decoder: null,
+     encoding: null },
+  readable: true,
+  domain: null,
+  _events: { end: [Function] },
+  _eventsCount: 1,
+  _maxListeners: undefined,
+  path: 'C:\\Users\\rafael\\AppData\\Local\\Temp\\firebase-functions-14500ov7omgBJK6Uo.zip',
+  fd: 5,
+  flags: 'r',
+  mode: 438,
+  start: undefined,
+  end: undefined,
+  autoClose: true,
+  pos: undefined,
+  bytesRead: 44123 } 
+ Sat Mar 17 2018 15:52:27 GMT-0300 (Hora oficial do Brasil)
+[debug] [2018-03-17T18:52:28.692Z] <<< HTTP RESPONSE 200
+[info] +  functions: functions folder uploaded successfully
+[info] i  hosting: preparing public directory for upload...
+[debug] [2018-03-17T18:52:32.699Z] >>> HTTP REQUEST PUT https://deploy.firebase.com/v1/hosting/canto-do-saci/uploads/-L7pIewYiLAtQtpeQ8L2?fileCount=75&message=  
+  
+ Sat Mar 17 2018 15:52:32 GMT-0300 (Hora oficial do Brasil)
+[debug] [2018-03-17T18:52:52.808Z] <<< HTTP RESPONSE 200
+[debug] [2018-03-17T18:52:52.808Z] [hosting] .tgz uploaded successfully, waiting for extraction
+[info] +  hosting: 75 files uploaded successfully
+[debug] [2018-03-17T18:52:53.621Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/projects/canto-do-saci/locations/us-central1/functions  
+  
+ Sat Mar 17 2018 15:52:53 GMT-0300 (Hora oficial do Brasil)
+[debug] [2018-03-17T18:52:54.917Z] <<< HTTP RESPONSE 200
+[info] i  functions: updating function app...
+[debug] [2018-03-17T18:52:54.923Z] Trigger is:  {"httpsTrigger":{}}
+[debug] [2018-03-17T18:52:54.926Z] >>> HTTP REQUEST PATCH https://cloudfunctions.googleapis.com/v1/projects/canto-do-saci/locations/us-central1/functions/app 
+query params: {"updateMask":"sourceArchiveUrl,name,labels,httpsTrigger"} 
+ { sourceArchiveUrl: 'gs://staging.canto-do-saci.appspot.com/firebase-functions-source',
+  name: 'projects/canto-do-saci/locations/us-central1/functions/app',
+  labels: { 'deployment-tool': 'cli-firebase' },
+  httpsTrigger: {} } 
+ Sat Mar 17 2018 15:52:54 GMT-0300 (Hora oficial do Brasil)
+[debug] [2018-03-17T18:52:56.201Z] <<< HTTP RESPONSE 200
+[debug] [2018-03-17T18:52:56.204Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/projects/canto-do-saci/locations/us-central1/functions  
+  
+ Sat Mar 17 2018 15:52:56 GMT-0300 (Hora oficial do Brasil)
+[debug] [2018-03-17T18:52:57.242Z] <<< HTTP RESPONSE 200
+[debug] [2018-03-17T18:52:57.244Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/Y2FudG8tZG8tc2FjaS91cy1jZW50cmFsMS9hcHAvRXZkRHlfTy11LUk  
+  
+ Sat Mar 17 2018 15:52:57 GMT-0300 (Hora oficial do Brasil)
+[debug] [2018-03-17T18:52:58.272Z] <<< HTTP RESPONSE 200
+[debug] [2018-03-17T18:53:00.273Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/Y2FudG8tZG8tc2FjaS91cy1jZW50cmFsMS9hcHAvRXZkRHlfTy11LUk  
+  
+ Sat Mar 17 2018 15:53:00 GMT-0300 (Hora oficial do Brasil)
+[debug] [2018-03-17T18:53:01.450Z] <<< HTTP RESPONSE 200
+[debug] [2018-03-17T18:53:03.450Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/Y2FudG8tZG8tc2FjaS91cy1jZW50cmFsMS9hcHAvRXZkRHlfTy11LUk  
+  
+ Sat Mar 17 2018 15:53:03 GMT-0300 (Hora oficial do Brasil)
+[debug] [2018-03-17T18:53:04.632Z] <<< HTTP RESPONSE 200
+[debug] [2018-03-17T18:53:06.633Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/Y2FudG8tZG8tc2FjaS91cy1jZW50cmFsMS9hcHAvRXZkRHlfTy11LUk  
+  
+ Sat Mar 17 2018 15:53:06 GMT-0300 (Hora oficial do Brasil)
+[debug] [2018-03-17T18:53:07.808Z] <<< HTTP RESPONSE 200
+[debug] [2018-03-17T18:53:09.809Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/Y2FudG8tZG8tc2FjaS91cy1jZW50cmFsMS9hcHAvRXZkRHlfTy11LUk  
+  
+ Sat Mar 17 2018 15:53:09 GMT-0300 (Hora oficial do Brasil)
+[debug] [2018-03-17T18:53:10.983Z] <<< HTTP RESPONSE 200
+[info] +  functions[app]: Successful update operation. 
+[info] Function URL (app): https://us-central1-canto-do-saci.cloudfunctions.net/app
+[debug] [2018-03-17T18:53:10.998Z] >>> HTTP REQUEST POST https://deploy.firebase.com/v1/projects/canto-do-saci/releases  
+ { hosting: 
+   { public: 'public',
+     ignore: [ 'firebase.json', '**/.*', '**/node_modules/**' ],
+     rewrites: [ [Object], [Object] ],
+     version: '-L7pIewYiLAtQtpeQ8L2',
+     prefix: '-L7pIewYiLAtQtpeQ8L2/',
+     manifest: [] } } 
+ Sat Mar 17 2018 15:53:10 GMT-0300 (Hora oficial do Brasil)
+[debug] [2018-03-17T18:53:12.190Z] <<< HTTP RESPONSE 200
+[info] 
+[info] +  Deploy complete!
+[info] 
+[info] Project Console: https://console.firebase.google.com/project/canto-do-saci/overview
+[info] Hosting URL: https://canto-do-saci.firebaseapp.com

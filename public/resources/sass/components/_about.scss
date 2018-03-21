@@ -1,0 +1,45 @@
+.about {
+
+
+    &__box {
+        margin: 0 auto;
+        width: 70%;
+
+        @include respond(tb-landscape) {
+            width: 75%;
+        }
+
+        @include respond(tb-large) {
+            width: 80%;
+        }
+
+        @include respond(phone) {
+            width: 85%;
+        }
+    }
+
+    &__text {
+        text-align: center;
+        width: 70%;
+        margin: 0 auto;
+
+        @include respond(tb-landscape) {
+            width: 80%;
+        }
+
+        @include respond(tb-large) {
+            width: 90%;
+        }
+
+        @include respond(phone) {
+            width: 100%;
+        }
+    }
+
+    &__paragraph {
+        display: block;
+        &:not(:last-child) {
+            margin-bottom: 2rem;
+        }
+    }
+}

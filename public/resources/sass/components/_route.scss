@@ -1,0 +1,53 @@
+.route {
+
+    &__label {
+        margin-bottom: 3px;
+        display: block;
+        color: $color-primary-light;
+        font-size: 1.4rem;
+    }
+
+    &__input {
+        padding: 2px;
+        display: block;
+        outline: none;
+        margin: 1rem auto; 
+    }
+
+
+    &__radio {
+        position: relative;
+        display: none;
+
+        &:checked + .route__icons__label i {
+            color: $color-primary-light;
+        }
+
+        &__option {
+            position: relative;
+            display: inline-block;
+        }
+
+        &__box {
+            padding: 0 3rem;
+            margin-bottom: .5rem; 
+
+            @include respond(tb-large) {
+                padding: 0 2rem;
+            }
+
+            @include respond(phone) {
+                padding: 0 .5rem;
+            }
+
+            @include clearfix;
+        }
+
+    }
+
+    &__icons {
+        font-size: 2rem;
+        color: $color-white;
+        transition: all .2s;
+    }
+}

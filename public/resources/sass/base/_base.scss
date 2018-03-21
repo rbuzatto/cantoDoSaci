@@ -1,0 +1,27 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+*:focus {outline: none;}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    box-sizing: border-box;
+    background-color: $color-white-light;
+}
+
+li {
+    list-style: none;
+}
+
+@font-face {
+    font-family: Cordel;
+    src: url(../../vendors/fonts/cordel/CordelEncarnadoII.woff);
+    }

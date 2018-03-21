@@ -1,0 +1,18 @@
+.u-center-text {text-align: center !important;}
+
+.u-margin-bottom-small  {
+    @include respond(minW-680){margin-bottom: 2rem !important;}
+    @include respond(maxW-680){margin-bottom: 1.2rem !important;}
+}
+
+.u-margin-bottom-medium {
+    @include respond(minW-680){margin-bottom: 4rem !important;}
+    @include respond(maxW-680){margin-bottom: 3rem !important;}
+    @include respond(xs-phone){margin-bottom: 2rem !important;}
+}
+
+.u-margin-bottom-large  {
+    @include respond(minW-680){margin-bottom: 8rem !important;}
+    @include respond(maxW-680){margin-bottom: 6rem !important;}
+    @include respond(xs-phone){margin-bottom: 4rem !important;}
+}

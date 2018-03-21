@@ -1,0 +1,93 @@
+.list {
+
+    &__title {
+        color: $color-primary-dark;
+        margin-bottom: 1rem;
+        margin-left: 2rem;
+        padding-bottom: 3px;
+        text-transform: uppercase;
+        font-weight: 500;
+        font-size: 2rem;
+        position: relative;
+        display: inline-block;
+
+        @include respond (phone) { font-size: 1.8rem;}
+        @include respond (xxs-phone) { font-size: 1.5rem;}
+
+        &:not(:first-child) {margin-top: 1.5rem;}
+
+        &::after {
+            @include underline(2px, 50%);
+            background-color: $color-primary-dark;
+        }
+
+        &--acomp {
+            font-size: 1.6rem;
+            padding-bottom: 2px;
+            @include respond (phone) { font-size: 1.4rem;}
+            @include respond (xxs-phone) { font-size: 1.2rem;}
+        }
+    }
+
+    &__group__box {
+        text-align: left;
+        margin-bottom: 1rem;
+        width: 100%;
+        color: $color-primary-dark;
+    }
+
+    &__group__box &__item:not(:last-child) {
+        margin-bottom: 2px;
+    }
+
+    &__item {
+            &,
+            &--acomp { 
+                margin: 0 1rem;
+                margin-bottom: 1rem;
+            }
+            font-size: $smaller-font-size;
+            @include respond (phone) { font-size: 1.2rem;}
+            @include respond (xxs-phone) { font-size: 1.0rem;}
+
+            &--acomp {
+                font-size: 1.2rem;
+            @include respond (phone) { font-size: 1rem;}
+            @include respond (xxs-phone) { font-size:.8rem;}
+
+            }
+
+            &__box, 
+            &--acomp {
+                @include clearfix;
+                color: $color-primary-dark;
+            }
+
+            &--acomp {
+                // width: 80%;
+            }
+
+            &__name {
+                float: left;
+                max-width: 90%;
+                // font-size: $smaller-font-size;
+            }
+
+            &__price {
+                float: right;
+                // font-size: $smaller-font-size;
+                display: block;
+                text-align: right;
+                max-width: 12rem;
+            }
+
+            &__money,
+            &__value {
+                // font-size: $smaller-font-size;
+                display: block;
+                width: 5rem;
+            }
+
+    }
+
+}

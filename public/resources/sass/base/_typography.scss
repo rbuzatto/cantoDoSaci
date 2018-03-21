@@ -1,0 +1,130 @@
+body {
+    font-family: Cordel, "Lato", sans-serif;
+    font-weight: 400;
+    color: $color-grey-dark;
+}
+
+.heading-primary {
+    color: $color-white;
+    text-transform: uppercase;
+    font-weight: 100;
+    backface-visibility: hidden;
+
+    &--main {
+        display: block;
+        // text-shadow: 2px 2px 6px rgba($color-primary-dark, .6);
+        padding-bottom: 2px;
+        border-bottom: 2px solid $color-white;
+        font-size: 4.5rem;
+        letter-spacing: 3px;
+        animation: moveInRight 2s ease-in;
+        
+    }
+
+    &--sub {
+        display: block;
+        font-weight: 300;
+        margin-top: 1rem;
+        font-size: 1.5rem;
+        line-height: 1.6rem;
+        letter-spacing: 4px;
+        animation: moveInUp 2.3s ease-out;
+        animation-delay: .2s;
+        animation-fill-mode: backwards;        
+    }
+}
+
+.heading-secondary {
+    color: $color-primary-dark;
+    font-size: 4.8rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 300;
+
+    @include respond(phone) {
+        font-size: 4rem;
+    }
+
+    @include respond(s-phone) {
+        font-size: 3.6rem;
+    }
+
+    &--gallery {
+        font-size: 4.5rem;
+        letter-spacing: 2px;
+
+        @include respond(tb-landscape) {
+            font-size: 3.6rem;
+        }
+    
+        @include respond(tb-large) {
+            font-size: 2.6rem;
+        }
+
+        @include respond(maxW-680) {
+            font-size: 2.3rem;
+        }
+
+        // @include respond(phone) {
+        //     font-size: 2.1rem;
+        // }
+    
+        @include respond(s-phone) {
+            font-size: 1.6rem;
+        }
+
+        @include respond(xxs-phone) {
+            font-size: .9rem;
+        }
+    }
+}
+
+.heading-tertiary {
+    position: relative;
+    display: inline-block;
+    color: $color-white;   
+    font-size: 2.4rem;
+    font-weight: 300;
+    letter-spacing: 1px;
+    text-shadow: 2px 1px 1px rgba($color-black, .7);
+    padding-bottom: 4px;
+
+    &--brown {
+        color: $color-primary-dark;
+        position: relative;
+
+        &::before {
+            @include underline(2px);
+            @include underline-style(0, 1px, 1px, 0, $color-primary-dark, $color-primary-light);
+            z-index: 1;
+        }
+    }
+
+    @include respond(phone) {
+        font-size: 2.2rem;
+    }
+
+    @include respond(s-phone) {
+        font-size: 2rem;
+    }
+
+    &::after {
+        @include underline(2px);
+        @include underline-style(0, 1px, 1px, 0);
+    }
+}
+
+.paragraph {
+    font-size: $default-font-size;
+    line-height: 2.4rem;
+    color: $color-primary-dark;
+
+    @include respond(tb-large) {
+        font-size: $medium-font-size;
+    }
+
+    @include respond(phone) {
+        font-size: $smaller-font-size;
+    }
+}
+

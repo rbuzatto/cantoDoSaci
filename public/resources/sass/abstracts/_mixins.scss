@@ -1,0 +1,94 @@
+@mixin clearfix {
+    &::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+@mixin absCenter {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@mixin underline($height, $width: 25%) {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: $width;
+    height: $height;
+
+}
+
+@mixin underline-style($top: 0, $right: 0, $bottom: 0, $left: 0, $color: $color-white, $color-border: $color-black, $a: .7) {
+    background-color: $color;
+    border-top:     $top solid rgba($color-border, $a);
+    border-right:   $right solid rgba($color-border, $a);
+    border-bottom:  $bottom solid rgba($color-border, $a);
+    border-left:    $left solid rgba($color-border, $a);
+}
+
+/* --- MEDIA QUERIES MIXINS ---*/
+
+/*SUGGESTED ORDER: Base + typography > general layout + grid > page layout > components*/
+
+@mixin respond($breakpoint) {
+
+    @if $breakpoint == tb-landscape {
+        @media only screen and (max-width: 68.75em) {@content}; //1100px
+    }
+
+    @if $breakpoint == tb-large {
+        @media only screen and (max-width: 50.75em) {@content}; //812px 
+    }
+
+    @if $breakpoint == maxW-680 {
+        @media only screen and (max-width: 42.5em) {@content}; //680px
+    }
+
+    
+    @if $breakpoint == phone {
+        @media only screen and (max-width: 37.5em) {@content}; //600px
+    }
+
+    
+    @if $breakpoint == s-phone {
+        @media only screen and (max-width: 31.9em) {@content}; //510px
+    }
+
+    @if $breakpoint == xs-phone {
+        @media only screen and (max-width: 28.125em) {@content}; //450px
+    }
+
+    @if $breakpoint == xxs-phone {
+        @media only screen and (max-width: 25em) {@content}; //400px
+    }
+
+    /* --- SUPERIOR WIDTH ---*/
+
+    @if $breakpoint == minW-tb-large {
+        @media only screen and (min-width: 50.75em) {@content}; //812px 
+    }
+
+    @if $breakpoint == minW-680 {
+        @media only screen and (min-width: 42.5em) {@content}; //min680px
+    }
+}
+
+/*
+* 000 -  600px       Phone
+* 600 -  900px       Tablet portrait
+* 900 - 1200px       Tablet landscape
+* [1200 - 1800px]    normal style applies
+* 1800px +           Big Desktop
+*****
+* $breakpoint arguement choises:
+* - phone
+* - tab-port
+* - tab-land
+* - big-desktop
+*/

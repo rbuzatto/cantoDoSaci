@@ -1,0 +1,237 @@
+.navigation {
+    position: relative;
+    height: 10rem;
+    text-align: center;
+    padding: 1.5rem 3rem;
+
+    &, &--sticky {
+        text-align: center;
+    }
+
+    &--sticky {
+        position: fixed;
+        top: -30rem;
+        left: 0;
+        width: 100%;
+        box-shadow: 0px 2px 2px $color-primary-light;
+        background-color: rgba($color-logo-bkgd, 1);
+        z-index: 9999;
+        padding: 1.5rem 2rem;
+        height: 7rem; // mudar margin nav-list--sticky
+        transition: top .6s;
+
+        @include respond(tb-large) {
+            padding: 2rem 2rem;
+            margin: 0;
+        }
+
+        @include respond(phone) {
+            padding: 1rem 1.5rem;
+            margin: 0;
+        }
+    }
+
+    &__logo-box {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: inline-block;
+        height: 100%;
+        padding: 2rem 6rem 2rem 6rem;
+
+        @include respond(tb-landscape) {
+            padding: 2rem 5rem 2rem 5rem;
+        }
+
+        @include respond(tb-large) {
+            padding: 2rem 3.5rem 2rem 3.5rem;
+        }
+
+        @include respond(phone) {
+            padding: 2rem 2rem 2rem 2rem;
+        }
+    }
+    &__img {
+        height: 100%;
+    }
+    &__nav-box {
+        height: 100%;
+        display: inline-block; 
+        position: relative;
+
+        @include respond(tb-large) {
+            //modificação para que o drop down fique no topo;
+            position: absolute;
+            top: 0;
+            left:0;
+            display: none;
+            width: 30%;
+            float: left;
+            height: 90vh;
+        }
+
+        @include respond(phone) {width: 40%;}
+        @include respond(s-phone) {width: 45%;}
+        @include respond(xs-phone) {width: 55%;}
+    }
+
+    &__nav-list {
+        margin: 1rem 0;
+        padding: 2rem;
+        font-size: 1.5rem;
+        line-height: 1.5rem;
+        letter-spacing: 3px;
+        font-weight: 300;
+
+
+        &, &--sticky {
+            position: relative;
+            list-style: none;
+
+            @include respond(tb-large) {
+                padding: 2rem;
+                margin: 0;
+                background: linear-gradient(to right bottom,
+                rgba($color-primary-light, 1),
+                rgba($color-primary-light, 1) 70%,
+                rgba($color-primary-dark, .95));
+                z-index: 9999;
+                height: 90vh;
+                text-align: left;
+                border-radius: 2px;
+                box-shadow: 3px 3px 3px $color-primary;
+            }
+        }
+
+        &--sticky {
+
+            @include respond(minW-tb-large){
+            // margin: 2.9rem 0;
+            // height: 1.2rem;
+            margin: 0;
+            height: 100%;
+            padding: 0;
+            vertical-align: middle;
+            font-size: 1.4rem; //se mudar font size/line height mudar margin
+            line-height: 4rem;
+            letter-spacing: 2px;
+            font-weight: 300;
+            }
+
+        }
+
+    }
+
+    &__nav-item {
+        display: inline-block;
+        position: relative;
+
+        @include respond(tb-large) {
+            display: block;
+        }
+    }
+
+    &__nav-item:not(:last-child) {
+        margin-right: 3rem;
+
+        @include respond(tb-large) {
+            margin-right: 0;
+            margin-bottom: 1rem;
+        }
+
+    }
+
+    &__nav-link {
+        &:link,
+        &:visited {
+            text-decoration: none;
+            text-transform: uppercase;
+            padding-bottom: 3px;
+            transition: all .3s;
+            color: $color-white;
+            border-bottom: 2px solid transparent;
+
+            // style das letras para drop down nav
+            @include respond(tb-large) {
+                color: $color-logo-bkgd;
+                font-weight: 100;
+                text-transform: initial;
+
+            }
+        }
+    
+        &--sticky {
+            &:link,
+            &:visited {
+                color: $color-primary-dark;
+                border-bottom: 2px solid transparent;
+                transition: all .3s;
+
+                @include respond(tb-large) {
+                    color: $color-logo-bkgd;
+                    font-weight: 100;
+                    text-transform: initial;
+    
+                }
+            }
+
+            &:hover,
+            &:active {
+                border-bottom: 2px solid $color-primary-light !important;
+                @include respond(tb-large) {border-bottom: 2px solid transparent;}
+            } 
+        }
+
+        &:hover,
+        &:active {
+            border-bottom: 2px solid $color-primary-light;
+            @include respond(tb-large) {border-bottom: 2px solid transparent;}
+        }
+
+        // &:hover + &__spoon {
+        //    color: blue;//$color-primary-light;
+        // }
+
+        &__spoon {
+            display: none;
+            transition: all .2s;
+
+            @include respond(tb-large) {
+                display: block;
+                font-size: 1.8rem;
+                position: absolute;
+                top: 0;
+                left: -10px;
+                color: $color-logo-bkgd;
+                opacity: 0;
+            }
+        }
+    }
+
+    // mobile open/close btn
+    &__mobile-box {
+        float: right;
+        cursor: pointer;
+        display: none;
+
+        @include respond(tb-large) {
+            display: inline-block;
+        }
+
+
+        &__icon {
+            font-size: 4rem;
+            color: $color-white;
+
+            @include respond(tb-large) {
+                font-size: 3rem;
+            }
+
+            @include respond(phone) {
+                font-size: 2rem;
+            }
+
+            &--sticky {color: $color-primary-dark;}
+        }
+    }
+}

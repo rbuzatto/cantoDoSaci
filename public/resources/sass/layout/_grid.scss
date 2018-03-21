@@ -1,0 +1,58 @@
+.row {
+    max-width: $grid-width;
+    margin: 0 auto;
+
+    &:not(:last-child) {
+        margin-bottom: $gutter-vertical;
+    }
+
+    @include clearfix;
+    
+    [class^="col-"] {
+        float:left;
+        
+        &:not(:last-child) {
+
+            @include respond(minW-680) {
+                margin-right: $gutter-horizontal;
+            }
+        }
+    }
+
+    @include respond(minW-680) {
+    .col-1-of-2 {width: column-width(1, 2, $gutter-horizontal);}
+    }
+
+    .col-1-of-3 {width: column-width(1, 3, $gutter-horizontal);}
+
+    .col-2-of-3 {width: column-width(2, 3, $gutter-horizontal);}
+
+    .col-1-of-4 {width: column-width(1, 4, $gutter-horizontal);}
+}
+
+
+
+    [class^="col2-"] {
+        float:left;
+        
+        &:not(:last-child) {
+            margin-right: $gutter-horizontal-null;
+
+        }
+    }
+
+    .col2-1-of-2 {
+        width: column-width(1, 2, $gutter-horizontal-null);
+    }
+
+    .col2-1-of-3 {
+        width: column-width(1, 3, $gutter-horizontal-null);
+    }
+
+    .col2-2-of-3 {
+        width: column-width(2, 3, $gutter-horizontal-null);
+    }
+
+    .col2-1-of-4 {
+        width: column-width(1, 4, $gutter-horizontal-null);
+    }

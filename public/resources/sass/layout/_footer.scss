@@ -1,0 +1,78 @@
+.footer {
+    padding: 5rem 0;
+    background-color: $color-logo-bkgd;
+
+    @include respond(tb-landascape) {
+        padding: 3rem 0;
+    }
+
+    @include respond(tb-large) {
+        padding: 2rem 0;
+    }
+
+    &__box {
+        color: $color-primary-dark;
+    }
+
+    &__location {
+
+        margin-bottom: 4rem;
+
+        @include respond(tb-landascape) {
+            margin-bottom: 3rem;
+        }
+
+        @include respond(tb-large) {
+            margin-bottom: 1.5rem;
+        }
+
+        &-block{
+            display: block;
+            &:not(:last-child) {margin-bottom: 1rem;}
+        }
+    }
+
+    &__social-links {
+        display: block;
+        width: 30%;
+        list-style: none;
+        margin: 0 auto;
+
+        @include clearfix;
+
+        @include respond(maxW-680) {
+           width: 12rem;
+        }
+
+        li {
+            display: block;
+            float: left;
+            width: 33.3%;
+            margin: 0;
+            
+
+            a {
+                display: inline-block;
+            }
+        }
+    }
+
+    &__social-icons {
+        font-size: 2.8rem;
+        color: $color-primary-dark;
+        transition: all .3s;
+
+        @include respond(tb-landascape) {
+            font-size: 2.4rem;
+        }
+
+        @include respond(tb-large) {
+            font-size: 2rem;
+        }
+
+        &:hover {
+            color: $color-primary-light;
+        }
+    }
+
+}

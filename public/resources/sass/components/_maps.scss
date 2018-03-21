@@ -1,0 +1,111 @@
+.maps {
+    display: block;
+    width: 100%;
+    position: relative;
+
+    &__shade {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        padding: 3rem;
+        text-align-last: left;
+        background: linear-gradient(105deg,
+            rgba($color-logo-bkgd, 1),
+            rgba($color-logo-bkgd, 1) 35%,
+            rgba($color-black, .2) 35%,
+            rgba($color-black, .2)
+        );
+    }
+
+
+    &-box {
+        margin: 0 auto;
+        margin-top: 5rem;
+        width: 80%;
+        height: 60rem;
+        overflow: hidden;
+        text-align: center;
+        position: relative;
+
+        @include clearfix;
+
+        @include respond(tb-large) {
+            width: 90%;
+            height: 40rem;
+        }
+
+        @include respond(phone) {
+            height: 30rem;
+        }
+    }
+
+    &__route {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 25%;
+        border-radius: 3px;
+        padding: 1rem;
+        background-color: $color-primary-dark;
+        z-index: 5;
+        transform: translate(-50%, -105%);
+        transition: all .3s;
+
+        @include respond(tb-landscape) {
+            width: 35%;
+        }
+
+        @include respond(tb-large) {
+            width: 40%;
+        }
+
+        @include respond(phone) {
+            width: 45%;
+        }
+
+        @include respond(s-phone) {
+            width: 50%;
+        }
+
+        @include respond(xs-phone) {
+            width: 60%;
+        }
+
+        @include respond(xxs-phone) {
+            width: 85%;
+        }
+
+        &:hover {
+            transform: translate(-50%, -100%);
+        }
+
+        &-flag {
+            color: $color-white;
+            padding-top: 2px;
+            text-align: center;
+            line-height: 18px;
+            font-size: 1rem;
+            font-family: 'Lato';
+            letter-spacing: 1px;
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            width: 7rem;
+            height: 20px;
+            border-bottom-left-radius:  2rem;
+            border-bottom-right-radius:  2rem;
+            background-color: $color-primary-dark;
+            transform: translateX(-50%);
+            z-index: 999999;
+        }
+    }
+}
+
+#map {
+    position: relative;
+    height: 100%;
+    width: 100%;
+
+  }
