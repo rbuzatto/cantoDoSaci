@@ -736,7 +736,7 @@ body {
 .route__label {
   margin-bottom: 3px;
   display: block;
-  color: #733305;
+  color: #fff;
   font-size: 1.4rem; }
 
 .route__input {
@@ -749,7 +749,7 @@ body {
   position: relative;
   display: none; }
   .route__radio:checked + .route__icons__label i {
-    color: #733305; }
+    color: #e0d8c3; }
   .route__radio__option {
     position: relative;
     display: inline-block; }
@@ -771,7 +771,7 @@ body {
 
 .route__icons {
   font-size: 2rem;
-  color: #fff;
+  color: #733305;
   transition: all .2s; }
 
 .contact__info {

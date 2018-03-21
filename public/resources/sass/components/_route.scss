@@ -3,7 +3,7 @@
     &__label {
         margin-bottom: 3px;
         display: block;
-        color: $color-primary-light;
+        color: $color-white;
         font-size: 1.4rem;
     }
 
@@ -20,7 +20,7 @@
         display: none;
 
         &:checked + .route__icons__label i {
-            color: $color-primary-light;
+            color: $color-logo-bkgd;
         }
 
         &__option {
@@ -47,7 +47,7 @@
 
     &__icons {
         font-size: 2rem;
-        color: $color-white;
+        color: $color-primary-light;
         transition: all .2s;
     }
 }
