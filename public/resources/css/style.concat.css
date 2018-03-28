@@ -1031,11 +1031,16 @@ body {
   .gallery__page--3 {
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../img/dishes_01.jpg); }
 
-.gallery__close, .gallery__close:link, .gallery__close:visited {
+.gallery__transition__box {
   position: absolute;
-  margin-top: 3rem;
-  top: -100%;
-  right: 3rem;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%); }
+
+.gallery__transition, .gallery__transition:link, .gallery__transition:visited {
+  position: relative;
+  display: inline-block;
+  margin: 0 3rem;
   width: 5rem;
   height: 5rem;
   z-index: 2;
@@ -1046,27 +1051,27 @@ body {
   /* --- SUPERIOR WIDTH ---*/
   /* --- SUPERIOR WIDTH ---*/ }
   @media only screen and (max-width: 28.125em) {
-    .gallery__close, .gallery__close:link, .gallery__close:visited {
+    .gallery__transition, .gallery__transition:link, .gallery__transition:visited {
       margin-top: 2rem;
       right: 2rem;
       width: 4rem;
       height: 4rem; } }
   @media only screen and (max-width: 25em) {
-    .gallery__close, .gallery__close:link, .gallery__close:visited {
+    .gallery__transition, .gallery__transition:link, .gallery__transition:visited {
       margin-top: 2rem;
       right: 2rem;
       width: 3rem;
       height: 3rem; } }
 
-.gallery__close:hover {
+.gallery__transition:hover {
   transform: translateY(-5px);
   box-shadow: -1px 6px 6px rgba(83, 36, 3, 0.4); }
 
-.gallery__close:focus, .gallery__close:active {
+.gallery__transition:focus, .gallery__transition:active {
   transform: translateY(-2px);
   box-shadow: -1px 1px 3px rgba(83, 36, 3, 0.4); }
 
-.gallery__close__icon {
+.gallery__transition__icon {
   color: #321602;
   font-size: 2rem;
   position: absolute;
@@ -1076,11 +1081,34 @@ body {
   /* --- SUPERIOR WIDTH ---*/
   /* --- SUPERIOR WIDTH ---*/ }
   @media only screen and (max-width: 28.125em) {
-    .gallery__close__icon {
+    .gallery__transition__icon {
       font-size: 1.6rem; } }
   @media only screen and (max-width: 25em) {
-    .gallery__close__icon {
+    .gallery__transition__icon {
       font-size: 1.4rem; } }
+
+.gallery__img {
+  height: 100%;
+  width: auto;
+  backface-visibility: hidden;
+  padding: 2rem;
+  background-color: #fff;
+  border: 3px solid #733305; }
+  .gallery__img__box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 70%;
+    display: none;
+    z-index: 5; }
+  .gallery__img__caption {
+    position: absolute;
+    bottom: .6rem;
+    left: 2.3rem;
+    font-family: Lato;
+    font-size: 1.3rem;
+    color: #321602; }
 
 .row {
   max-width: 114rem;

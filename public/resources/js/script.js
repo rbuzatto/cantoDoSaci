@@ -237,4 +237,68 @@ $(document).ready(function () {
       $('.form__sent__box').fadeOut();
     }, 3000);
   });
+
+    /* --- GALLERY IMAGE ---*/
+  var galleryImg = 0;
+
+  var galleryImgArray = [];
+  galleryImgArray.length = $('.gallery__page').length;
+  galleryImgArray.fill(0);
+  function scope() {
+    var i = 0;
+    var gall;
+    var figure = '.gallery__img__box';
+  for(i; i < $('.gallery__page').length; i++) {
+    gall = $('.gallery__page')[i];
+    $($(gall).find($(figure))[0]).css('display', 'block');
+    }
+  };
+  scope();
+
+  var galleryImageFade = 300
+$('.js--gallery-img--next').click(function(e) {
+  var i = currentGallery - 1 ;
+  var figure = '.gallery__img__box';
+  var currentPage = $('.gallery__page--' + currentGallery);
+  var galleryImg = galleryImgArray[i];
+  var imgs = $(currentPage.find(figure));
+  if (galleryImg < imgs.length - 1){
+  $(imgs[galleryImg]).fadeOut(galleryImageFade, function() {
+    $(imgs[galleryImg + 1]).fadeIn(galleryImageFade);
+    galleryImg++;
+    galleryImgArray[i] = galleryImg;
+  });
+  
+  } else {
+    $(imgs[galleryImg]).fadeOut(galleryImageFade, function() {
+      galleryImg = 0;
+      $(imgs[galleryImg]).fadeIn(galleryImageFade);
+      galleryImgArray[i] = galleryImg;
+    });
+  }
+
+});
+
+$('.js--gallery-img--prev').click(function(e) {
+  var i = currentGallery - 1 ;
+  var figure = '.gallery__img__box';
+  var currentPage = $('.gallery__page--' + currentGallery);
+  var galleryImg = galleryImgArray[i];
+  var imgs = $(currentPage.find(figure));
+  if (galleryImg > 0){
+  $(imgs[galleryImg]).fadeOut(galleryImageFade, function() {
+    $(imgs[galleryImg - 1]).fadeIn(galleryImageFade);
+    galleryImg--;
+    galleryImgArray[i] = galleryImg;
+  });
+  
+} else {
+  $(imgs[galleryImg]).fadeOut(galleryImageFade, function() {
+    galleryImg = imgs.length - 1;
+    $(imgs[galleryImg]).fadeIn(galleryImageFade);
+    galleryImgArray[i] = galleryImg;
+  });
+  
+}
+});
 });
