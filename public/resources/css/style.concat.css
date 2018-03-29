@@ -69,6 +69,14 @@ li {
   font-family: Cordel;
   src: url(../../vendors/fonts/cordel/CordelEncarnadoII.woff); }
 
+@font-face {
+  font-family: Yanone;
+  src: url(../../vendors/fonts/yanone/YanoneTagesschrift.ttf); }
+
+@font-face {
+  font-family: Seriffic;
+  src: url(../../vendors/fonts/seriffic/seriffic.ttf); }
+
 body {
   font-family: Cordel, "Lato", sans-serif;
   font-weight: 400;
@@ -184,6 +192,7 @@ body {
     border-left: 0 solid rgba(0, 0, 0, 0.7); }
 
 .paragraph {
+  font-family: Yanone, "Lato", sans-serif;
   font-size: 1.8rem;
   line-height: 2.4rem;
   color: #321602;
@@ -852,7 +861,7 @@ body {
   width: 10rem;
   z-index: 3;
   /* --- SUPERIOR WIDTH ---*/ }
-  @media only screen and (max-width: 25em) {
+  @media only screen and (max-width: 31.9em) {
     .gallery__side-options {
       width: 6rem;
       padding: 2rem 0; } }
@@ -870,7 +879,7 @@ body {
     border: 2px solid #532403;
     overflow: hidden;
     /* --- SUPERIOR WIDTH ---*/ }
-    @media only screen and (max-width: 25em) {
+    @media only screen and (max-width: 31.9em) {
       .gallery__side-options__button {
         width: 3rem;
         height: 3rem; } }
@@ -881,14 +890,14 @@ body {
       height: 5rem;
       transition: .4s ease-in-out;
       /* --- SUPERIOR WIDTH ---*/ }
-      @media only screen and (max-width: 25em) {
+      @media only screen and (max-width: 31.9em) {
         .gallery__side-options__button__box {
           width: 3rem;
           height: 3rem; } }
       .gallery__side-options__button__box:hover {
         transform: translateX(-10rem);
         /* --- SUPERIOR WIDTH ---*/ }
-        @media only screen and (max-width: 25em) {
+        @media only screen and (max-width: 31.9em) {
           .gallery__side-options__button__box:hover {
             transform: translateX(0); } }
     .gallery__side-options__button__container {
@@ -897,7 +906,7 @@ body {
       height: 33.33%;
       padding: 2rem;
       /* --- SUPERIOR WIDTH ---*/ }
-      @media only screen and (max-width: 25em) {
+      @media only screen and (max-width: 31.9em) {
         .gallery__side-options__button__container {
           padding: 1.5rem; } }
     .gallery__side-options__button__icon, .gallery__side-options__button__name {
@@ -909,7 +918,7 @@ body {
     .gallery__side-options__button__icon {
       font-size: 2rem;
       /* --- SUPERIOR WIDTH ---*/ }
-      @media only screen and (max-width: 25em) {
+      @media only screen and (max-width: 31.9em) {
         .gallery__side-options__button__icon {
           font-size: 1.4rem; } }
     .gallery__side-options__button__name {
@@ -919,7 +928,7 @@ body {
       width: 5rem;
       height: 100%;
       /* --- SUPERIOR WIDTH ---*/ }
-      @media only screen and (max-width: 25em) {
+      @media only screen and (max-width: 31.9em) {
         .gallery__side-options__button__block--i, .gallery__side-options__button__block--name {
           width: 100%; } }
     .gallery__side-options__button__block--i {
@@ -1035,7 +1044,19 @@ body {
   position: absolute;
   bottom: 2rem;
   left: 50%;
-  transform: translateX(-50%); }
+  transform: translateX(-50%);
+  /* --- SUPERIOR WIDTH ---*/
+  /* --- SUPERIOR WIDTH ---*/
+  /* --- SUPERIOR WIDTH ---*/ }
+  @media only screen and (max-width: 50.75em) {
+    .gallery__transition__box {
+      bottom: 1.5rem; } }
+  @media only screen and (max-width: 42.5em) {
+    .gallery__transition__box {
+      bottom: 1rem; } }
+  @media only screen and (max-width: 31.9em) {
+    .gallery__transition__box {
+      bottom: .5rem; } }
 
 .gallery__transition, .gallery__transition:link, .gallery__transition:visited {
   position: relative;
@@ -1049,19 +1070,21 @@ body {
   box-shadow: -1px 2px 3px rgba(83, 36, 3, 0.4);
   transition: all .3s;
   /* --- SUPERIOR WIDTH ---*/
+  /* --- SUPERIOR WIDTH ---*/
   /* --- SUPERIOR WIDTH ---*/ }
-  @media only screen and (max-width: 28.125em) {
+  @media only screen and (max-width: 42.5em) {
     .gallery__transition, .gallery__transition:link, .gallery__transition:visited {
-      margin-top: 2rem;
-      right: 2rem;
       width: 4rem;
       height: 4rem; } }
-  @media only screen and (max-width: 25em) {
+  @media only screen and (max-width: 31.9em) {
     .gallery__transition, .gallery__transition:link, .gallery__transition:visited {
-      margin-top: 2rem;
-      right: 2rem;
       width: 3rem;
       height: 3rem; } }
+  @media only screen and (max-width: 25em) {
+    .gallery__transition, .gallery__transition:link, .gallery__transition:visited {
+      width: 2rem;
+      height: 2rem;
+      margin: 0 2rem; } }
 
 .gallery__transition:hover {
   transform: translateY(-5px);
@@ -1079,13 +1102,17 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   /* --- SUPERIOR WIDTH ---*/
+  /* --- SUPERIOR WIDTH ---*/
   /* --- SUPERIOR WIDTH ---*/ }
-  @media only screen and (max-width: 28.125em) {
+  @media only screen and (max-width: 42.5em) {
     .gallery__transition__icon {
       font-size: 1.6rem; } }
-  @media only screen and (max-width: 25em) {
+  @media only screen and (max-width: 31.9em) {
     .gallery__transition__icon {
       font-size: 1.4rem; } }
+  @media only screen and (max-width: 25em) {
+    .gallery__transition__icon {
+      font-size: 1rem; } }
 
 .gallery__img {
   height: 100%;

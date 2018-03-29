@@ -15,7 +15,7 @@
         width: 10rem;
         z-index: 3;
 
-        @include respond(xxs-phone) {
+        @include respond(s-phone) {
             width: 6rem;
             padding: 2rem 0; 
         }
@@ -40,7 +40,7 @@
             border: 2px solid $color-primary;
             overflow: hidden;
             
-            @include respond(xxs-phone) {
+            @include respond(s-phone) {
                 width: 3rem;
                 height: 3rem; 
             }
@@ -52,7 +52,7 @@
                 height: 5rem;
                 transition: .4s ease-in-out;
 
-                @include respond(xxs-phone) {
+                @include respond(s-phone) {
                     width: 3rem;
                     height: 3rem; 
                 }
@@ -61,7 +61,7 @@
                 &:hover {
                     transform: translateX(-10rem);
 
-                    @include respond(xxs-phone) {
+                    @include respond(s-phone) {
                         transform: translateX(0);
                     }
                 }
@@ -73,7 +73,7 @@
                 height: 33.33%;
                 padding: 2rem;
 
-                @include respond(xxs-phone) {
+                @include respond(s-phone) {
                     padding: 1.5rem; 
                 }
 
@@ -88,7 +88,7 @@
             &__icon {
                 font-size: 2rem;
 
-                @include respond(xxs-phone) {
+                @include respond(s-phone) {
                     font-size: 1.4rem; 
                 }
             }
@@ -103,7 +103,7 @@
                 width: 5rem;
                 height: 100%;
 
-                @include respond(xxs-phone) {
+                @include respond(s-phone) {
                     width: 100%;
                 }
             }
@@ -275,6 +275,18 @@
             bottom: 2rem;
             left: 50%;
             transform: translateX(-50%);
+
+            @include respond(tb-large) {
+                bottom: 1.5rem;
+            }
+
+            @include respond(maxW-680) {
+                bottom: 1rem;
+            }
+
+            @include respond(s-phone) {
+                bottom: .5rem;
+            }
         }
         
         &,
@@ -293,18 +305,20 @@
             box-shadow: -1px 2px 3px rgba($color-primary, .4);
             transition: all .3s;
 
-            @include respond(xs-phone) {
-                margin-top: 2rem;
-                right: 2rem;
+            @include respond(maxW-680) {
                 width: 4rem;
                 height: 4rem;
-                }
+            }
 
-            @include respond(xxs-phone) {
-            margin-top: 2rem;
-            right: 2rem;
+            @include respond(s-phone) {
             width: 3rem;
             height: 3rem;
+            }
+
+            @include respond(xxs-phone) {
+                width: 2rem;
+                height: 2rem;
+                margin: 0 2rem;
             }
         }
 
@@ -324,8 +338,9 @@
             font-size: 2rem;
             @include absCenter;
 
-            @include respond(xs-phone) {font-size: 1.6rem;}
-            @include respond(xxs-phone) {font-size: 1.4rem;}
+            @include respond(maxW-680) {font-size: 1.6rem;}
+            @include respond(s-phone) {font-size: 1.4rem;}
+            @include respond(xxs-phone) {font-size: 1rem;}
         }
     }
 
