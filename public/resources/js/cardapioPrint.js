@@ -124,114 +124,72 @@ var appendTotal = function appendTotal(menuObj, linesPerPage) {
         var m = 0;
         // m indica a posição no array do objeto
 
-        /* --- acomp --- */
-        if (group.name === 'acompanhamentos') {
-            while (m < t) {
-                if (n === linesPerPage) {
-                    boxAppend = tagStart;
-                }
-                // posição array 0 entao print titulo
-                // usei um valor n equivalente de 3 para titulos
-                if (m === 0) {
-                    if (n <= 3) {
-                        n = 0;
-                    } else {
-                        n -= 3;
-                        boxAppend += titleTagAcomp(group.name);
-                    }
-                }
-                /* caso 1: itensRestantes >= Bloco[linhasRestantes] */
-                // print itens = linhasRestantes e feche bloco;
-                if (n <= t - 1 - m) {
-                    liGroupTag = '';
-                    for (var j = m; j < m + n; j++) {
-                        liGroupTag += liWraper(singleItemTag(group.itens[j]));
-                    }
-                    boxAppend += listAppend(liGroupTag);
-                    boxAppend += tagClose;
-                    m += n;
-                    n = linesPerPage;
-                    $('.menu__box .row.menu__box__itens .owl-carousel.owl-theme').append(boxAppend);
-                    boxAppend = '';
-                } else if (n > t - 1 - m) {
-                    /* caso 2: itensRestantes < Bloco[linhasRestantes]*/
-                    // print entao todos itens e bloco segue aberto;
-                    liGroupTag = '';
-                    for (var k = m; k < t; k++) {
-                        liGroupTag += liWraper(singleItemTag(group.itens[k]));
-                    }
-                    boxAppend += listAppend(liGroupTag);
-                    n -= t - m;
-                    m = t; // sair do loop do while 
-                }
-            }
-        } else {
             //      ---------------
             /* --- GRUPO PRINCIPAL --- */
             //      ---------------
-            while (m < t) {
-                if (n === linesPerPage) {
-                    boxAppend = tagStart;
-                }
-                if (m === 0) {
-                    if (n <= 6 || n <= 8 && (group.precos || group.acompanhamentos)) {
-                        n = 0;
-                    } else {
-                        n -= 3;
-                        boxAppend += titleTag(group.name);
+        while (m < t) {
+            if (n === linesPerPage) {
+                boxAppend = tagStart;
+            }
+            if (m === 0) {
+                if (n <= 6 || n <= 8 && (group.precos || group.acompanhamentos)) {
+                    n = 0;
+                } else {
+                    n -= 3;
+                    boxAppend += titleTag(group.name);
 
-                        //print caso tenha preços genericos
-                        if (group.precos) {
-                            var precosTxt = precosTag(group.precos);
-                            boxAppend += divWraper(singleItemTag('Tamanhos :&nbsp&nbsp&nbsp' + precosTxt));
-                            n -= 1;
-                        }
+                    //print caso tenha preços genericos
+                    if (group.precos) {
+                        var precosTxt = precosTag(group.precos);
+                        boxAppend += divWraper(singleItemTag('Tamanhos :&nbsp&nbsp&nbsp' + precosTxt));
+                        n -= 1;
+                    }
 
-                        //print caso tenha acompanhamentos
-                        if (group.acompanhamentos) {
-                            var acompTxt = acompanhamentosTag(group.acompanhamentos);
-                            boxAppend += divWraper(singleItemTag('Escolha 3 acompanhamentos :&nbsp&nbsp&nbsp' + acompTxt));
-                            n -= 1;
-                        }
+                    //print caso tenha acompanhamentos
+                    if (group.acompanhamentos) {
+                        var acompTxt = acompanhamentosTag(group.acompanhamentos);
+                        boxAppend += divWraper(singleItemTag('Escolha 3 acompanhamentos :&nbsp&nbsp&nbsp' + acompTxt));
+                        n -= 1;
                     }
-                }
-
-                if (n < 0) n = 0;
-                /* caso 1: itensRestantes >= Bloco[linhasRestantes] */
-                // print itens = linhasRestantes e feche bloco;
-                //( t - 1 ) - m 
-                if (n <= t - 1 - m) {
-                    liGroupTag = '';
-                    for (var j = m; j < m + n; j++) {
-                        liGroupTag += tagLiItem(group.itens[j]);
-                    }
-                    boxAppend += listAppend(liGroupTag);
-                    boxAppend += tagClose;
-                    m += n;
-                    n = linesPerPage;
-                    $('.menu__box .row.menu__box__itens .owl-carousel.owl-theme').append(boxAppend);
-                    boxAppend = '';
-                } else if (n > t - 1 - m) {
-                    /* caso 2: itensRestantes < Bloco[linhasRestantes]*/
-                    // print entao todos itens e bloco segue aberto;
-                    liGroupTag = '';
-                    for (var k = m; k < t; k++) {
-                        liGroupTag += tagLiItem(group.itens[k]);
-                    }
-                    boxAppend += listAppend(liGroupTag);
-                    n -= t - m;
-                    m = t; // sair do loop do while 
                 }
             }
-        }
 
-        /* fechar tag se for ultima iteração e se resta elementos a serem impressos */
-        if (n != linesPerPage && i == menuObj.length - 1) {
-            boxAppend += tagClose;
-            // console.log(boxAppend);
-            $('.menu__box .row.menu__box__itens .owl-carousel.owl-theme').append(tagStart + boxAppend);
+            if (n < 0) n = 0;
+            /* caso 1: itensRestantes >= Bloco[linhasRestantes] */
+            // print itens = linhasRestantes e feche bloco;
+            //( t - 1 ) - m 
+            if (n <= t - 1 - m) {
+                liGroupTag = '';
+                for (var j = m; j < m + n; j++) {
+                    liGroupTag += tagLiItem(group.itens[j]);
+                }
+                boxAppend += listAppend(liGroupTag);
+                boxAppend += tagClose;
+                m += n;
+                n = linesPerPage;
+                $('.menu__box .row.menu__box__itens .owl-carousel.owl-theme').append(boxAppend);
+                boxAppend = '';
+            } else if (n > t - 1 - m) {
+                /* caso 2: itensRestantes < Bloco[linhasRestantes]*/
+                // print entao todos itens e bloco segue aberto;
+                liGroupTag = '';
+                for (var k = m; k < t; k++) {
+                    liGroupTag += tagLiItem(group.itens[k]);
+                }
+                boxAppend += listAppend(liGroupTag);
+                n -= t - m;
+                m = t; // sair do loop do while 
+            }
         }
     }
+
+    /* fechar tag se for ultima iteração e se resta elementos a serem impressos */
+    if (n != linesPerPage && i == menuObj.length - 1) {
+        boxAppend += tagClose;
+        // console.log(boxAppend);
+        $('.menu__box .row.menu__box__itens .owl-carousel.owl-theme').append(tagStart + boxAppend);
+    }
+    
 };
 
 // let acompTag = function(group) {
@@ -281,3 +239,49 @@ var appendTotal = function appendTotal(menuObj, linesPerPage) {
 // }
 
 appendTotal(groupNames, 20);
+
+
+/////// retirado acomp pq eu não estava usando
+
+/* --- acomp --- */
+// if (group.name === 'acompanhamentos') {
+//     while (m < t) {
+//         if (n === linesPerPage) {
+//             boxAppend = tagStart;
+//         }
+//         // posição array 0 entao print titulo
+//         // usei um valor n equivalente de 3 para titulos
+//         if (m === 0) {
+//             if (n <= 3) {
+//                 n = 0;
+//             } else {
+//                 n -= 3;
+//                 boxAppend += titleTagAcomp(group.name);
+//             }
+//         }
+//         /* caso 1: itensRestantes >= Bloco[linhasRestantes] */
+//         // print itens = linhasRestantes e feche bloco;
+//         if (n <= t - 1 - m) {
+//             liGroupTag = '';
+//             for (var j = m; j < m + n; j++) {
+//                 liGroupTag += liWraper(singleItemTag(group.itens[j]));
+//             }
+//             boxAppend += listAppend(liGroupTag);
+//             boxAppend += tagClose;
+//             m += n;
+//             n = linesPerPage;
+//             $('.menu__box .row.menu__box__itens .owl-carousel.owl-theme').append(boxAppend);
+//             boxAppend = '';
+//         } else if (n > t - 1 - m) {
+//             /* caso 2: itensRestantes < Bloco[linhasRestantes]*/
+//             // print entao todos itens e bloco segue aberto;
+//             liGroupTag = '';
+//             for (var k = m; k < t; k++) {
+//                 liGroupTag += liWraper(singleItemTag(group.itens[k]));
+//             }
+//             boxAppend += listAppend(liGroupTag);
+//             n -= t - m;
+//             m = t; // sair do loop do while 
+//         }
+//     }
+// }

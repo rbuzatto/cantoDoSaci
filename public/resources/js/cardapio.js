@@ -189,7 +189,7 @@ var especiais = [{
 
 /* --- ACOMPANHAMENTOS --- */
 
-var acomp = [{
+var acompPratos = [{
     name: 'Arroz Branco ou Integral',
     price: 5,
     description: '(preparados com refogado de cebola, alho e sal, vegano)',
@@ -676,7 +676,7 @@ var groupNames = [{
     acompanhamentos: acompanhamentos
 }, {
     name: 'acompanhamentos',
-    itens: acomp
+    itens: acompPratos
 }, {
     name: 'entradas',
     itens: entradas,
