@@ -36,10 +36,12 @@ let sendEmail = function(contact) {
                throw(error);
             }
             console.log('Message sent: %s', info.messageId);
+            return Promise.resolve();
         });
         
     } catch (error) {
         res.send(error);
+        return Promise.reject(error);
     }
 }
 

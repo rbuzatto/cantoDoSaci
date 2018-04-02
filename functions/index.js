@@ -14,7 +14,11 @@ app.post('/contact', (req, res) => {
     
     let contact = req.body;
 
-    sendEmail(contact);
+    sendEmail(contact).then(() => {
+        res.sendStatus(200);
+    }).catch((err) => {
+        res.writeHead(404);
+    });
 });
 
 
