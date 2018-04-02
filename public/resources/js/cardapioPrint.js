@@ -132,7 +132,7 @@ var appendTotal = function appendTotal(menuObj, linesPerPage) {
                 boxAppend = tagStart;
             }
             if (m === 0) {
-                if (n <= 6 || n <= 8 && (group.precos || group.acompanhamentos)) {
+                if (n <= 6 || n <= 10 && (group.precos || group.acompanhamentos)) {
                     n = 0;
                 } else {
                     n -= 3;
@@ -148,8 +148,15 @@ var appendTotal = function appendTotal(menuObj, linesPerPage) {
                     //print caso tenha acompanhamentos
                     if (group.acompanhamentos) {
                         var acompTxt = acompanhamentosTag(group.acompanhamentos);
-                        boxAppend += divWraper(singleItemTag('Escolha 3 acompanhamentos :&nbsp&nbsp&nbsp' + acompTxt));
-                        n -= 1;
+                        var txtInicio = '';
+                        if (group.acompanhamentos === acompanhamentos) {
+                            txtInicio = 'Escolha 3 acompanhamentos';
+                        }
+                        if (group.acompanhamentos === molhos) {
+                            txtInicio = 'Molhos';
+                        }
+                        boxAppend += divWraper(singleItemTag(txtInicio + ' :&nbsp&nbsp&nbsp' + acompTxt));
+                        n -= 3;
                     }
                 }
             }

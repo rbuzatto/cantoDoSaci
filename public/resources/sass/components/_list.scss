@@ -1,6 +1,7 @@
 .list {
 
     &__title {
+        font-family: Seriffic, "Lato", sans-serif;
         color: $color-primary-dark;
         margin-bottom: 1rem;
         margin-left: 2rem;
@@ -29,11 +30,16 @@
         }
     }
 
-    &__group__box {
-        text-align: left;
-        margin-bottom: 1rem;
-        width: 100%;
-        color: $color-primary-dark;
+    &__group {
+
+        font-family: Yanone, "Lato", sans-serif;
+
+        &__box {
+            text-align: left;
+            margin-bottom: 1rem;
+            width: 100%;
+            color: $color-primary-dark;
+        }
     }
 
     &__group__box &__item:not(:last-child) {
@@ -41,52 +47,52 @@
     }
 
     &__item {
-            &,
-            &--acomp { 
-                margin: 0 1rem;
-                margin-bottom: 1rem;
-            }
-            font-size: $smaller-font-size;
-            @include respond (phone) { font-size: 1.2rem;}
-            @include respond (xxs-phone) { font-size: 1.0rem;}
 
-            &--acomp {
-                font-size: 1.2rem;
-            @include respond (phone) { font-size: 1rem;}
-            @include respond (xxs-phone) { font-size:.8rem;}
+        &,
+        &--acomp {
+            font-family: Yanone, "Lato", sans-serif; 
+            margin: 0 1rem;
+            margin-bottom: 1rem;
+        }
+        font-size: $smaller-font-size;
+        @include respond (phone) { font-size: 1.2rem;}
+        @include respond (xxs-phone) { font-size: 1.0rem;}
 
-            }
+        &--acomp {
+            font-size: 1.2rem;
+        @include respond (phone) { font-size: 1rem;}
+        @include respond (xxs-phone) { font-size:.8rem;}
 
-            &__box, 
-            &--acomp {
-                @include clearfix;
-                color: $color-primary-dark;
-            }
+        }
 
-            &--acomp {
-                // width: 80%;
-            }
+        &__box, 
+        &--acomp {
+            @include clearfix;
+            color: $color-primary-dark;
+        }
 
-            &__name {
-                float: left;
-                max-width: 90%;
-                // font-size: $smaller-font-size;
-            }
+        &__box &__name {
+            @include respond (tb-large) { max-width: 60%}
+            @include respond (phone) { max-width: 50%}
+        }
 
-            &__price {
-                float: right;
-                // font-size: $smaller-font-size;
-                display: block;
-                text-align: right;
-                max-width: 12rem;
-            }
+        &__name {
+            float: left;
+            max-width: 80%;
+        }
 
-            &__money,
-            &__value {
-                // font-size: $smaller-font-size;
-                display: block;
-                width: 5rem;
-            }
+        &__price {
+            float: right;
+            display: block;
+            text-align: right;
+            max-width: 16rem;
+        }
+
+        &__money,
+        &__value {
+            display: block;
+            width: 5rem;
+        }
 
     }
 

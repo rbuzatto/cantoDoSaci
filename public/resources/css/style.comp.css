@@ -410,6 +410,7 @@ body {
       background: linear-gradient(to bottom, #733305, #e0d8c3 50%, #733305 100%); }
 
 .list__title {
+  font-family: Seriffic, "Lato", sans-serif;
   color: #321602;
   margin-bottom: 1rem;
   margin-left: 2rem;
@@ -450,11 +451,13 @@ body {
       .list__title--acomp {
         font-size: 1.2rem; } }
 
-.list__group__box {
-  text-align: left;
-  margin-bottom: 1rem;
-  width: 100%;
-  color: #321602; }
+.list__group {
+  font-family: Yanone, "Lato", sans-serif; }
+  .list__group__box {
+    text-align: left;
+    margin-bottom: 1rem;
+    width: 100%;
+    color: #321602; }
 
 .list__group__box .list__item:not(:last-child) {
   margin-bottom: 2px; }
@@ -464,6 +467,7 @@ body {
   /* --- SUPERIOR WIDTH ---*/
   /* --- SUPERIOR WIDTH ---*/ }
   .list__item, .list__item--acomp {
+    font-family: Yanone, "Lato", sans-serif;
     margin: 0 1rem;
     margin-bottom: 1rem; }
   @media only screen and (max-width: 37.5em) {
@@ -488,14 +492,23 @@ body {
       content: "";
       display: table;
       clear: both; }
+  .list__item__box .list__item__name {
+    /* --- SUPERIOR WIDTH ---*/
+    /* --- SUPERIOR WIDTH ---*/ }
+    @media only screen and (max-width: 50.75em) {
+      .list__item__box .list__item__name {
+        max-width: 60%; } }
+    @media only screen and (max-width: 37.5em) {
+      .list__item__box .list__item__name {
+        max-width: 50%; } }
   .list__item__name {
     float: left;
-    max-width: 90%; }
+    max-width: 80%; }
   .list__item__price {
     float: right;
     display: block;
     text-align: right;
-    max-width: 12rem; }
+    max-width: 16rem; }
   .list__item__money, .list__item__value {
     display: block;
     width: 5rem; }
