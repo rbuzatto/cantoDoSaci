@@ -17,7 +17,7 @@ app.post('/contact', (req, res) => {
     sendEmail(contact).then(() => {
         res.sendStatus(200);
     }).catch((err) => {
-        res.writeHead(404);
+        res.sendStatus(500);
     });
 });
 

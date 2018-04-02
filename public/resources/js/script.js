@@ -236,15 +236,15 @@ $(document).ready(function () {
       type: form.attr('method'),
       url: form.attr('action'),
       data: form.serialize(),
-      success: function(data) {
-        console.log('mensagem enviada!');
-      }
+      success: messageSent
     });
+
+    function messageSent(data) {
     $('.form__sent__box').fadeIn();
 
     setTimeout(function () {
       $('.form__sent__box').fadeOut();
-    }, 3000);
+    }, 3000);}
   });
 
     /* --- GALLERY IMAGE ---*/
