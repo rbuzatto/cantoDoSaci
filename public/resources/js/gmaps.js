@@ -26,6 +26,7 @@ function initMap() {
 
   $(document).on('submit', '#form-route', function () {
     codeAddress(directionsDisplay, directionsService, markerArray, stepDisplay, map, saciLocation, geocoder);
+    $('.maps__route').css('transform', '');
     return false;
   });
 

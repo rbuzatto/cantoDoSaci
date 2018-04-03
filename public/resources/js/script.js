@@ -87,15 +87,17 @@ $(document).ready(function () {
   });
 
   /* --- ABA DE BUSCA DE ROTA --- */
-  var counterClick = 0;
+  
   $('.maps__route-flag').on('click', function () {
-    if (counterClick == 0) {
-      $('.maps__route').css('transform', 'translate(-50%, 0%)');
-      counterClick++;
+    function flag() {
+      var styleStatus = (document.getElementsByClassName('maps__route')[0].style.transform);
+    if (styleStatus === '') {
+      $(this).css('transform', 'translate(-50%, 0%)');
     } else {
-      $('.maps__route').css('transform', '');
-      counterClick--;
+      $(this).css('transform', '');
     }
+  }
+  flag.call('.maps__route');
   });
 
   /* --- FACA/COLHER HOVER --- */
@@ -241,7 +243,7 @@ $(document).ready(function () {
 
     function messageSent(data) {
     $('.form__sent__box').fadeIn();
-
+    $(this)[0].reset();
     setTimeout(function () {
       $('.form__sent__box').fadeOut();
     }, 3000);}

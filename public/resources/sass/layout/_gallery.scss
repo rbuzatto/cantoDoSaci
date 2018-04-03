@@ -58,11 +58,13 @@
                 }
 
                 // 10rem é o width total menos o width do bloco que está floated right
-                &:hover {
-                    transform: translateX(-10rem);
+                @media only screen and (hover: hover){
+                    &:hover {
+                        transform: translateX(-10rem);
 
-                    @include respond(s-phone) {
-                        transform: translateX(0);
+                        @include respond(s-phone) {
+                            transform: translateX(0);
+                        }
                     }
                 }
             }
@@ -322,9 +324,11 @@
             }
         }
 
-        &:hover {
-            transform: translateY(-5px);
-            box-shadow: -1px 6px 6px rgba($color-primary, .4);
+        @media only screen and (hover: hover){
+            &:hover {
+                transform: translateY(-5px);
+                box-shadow: -1px 6px 6px rgba($color-primary, .4);
+            }
         }
 
         &:focus,
