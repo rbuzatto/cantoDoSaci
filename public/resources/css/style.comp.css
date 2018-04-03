@@ -410,7 +410,7 @@ body {
       background: linear-gradient(to bottom, #733305, #e0d8c3 50%, #733305 100%); }
 
 .list__title {
-  font-family: Seriffic, "Lato", sans-serif;
+  font-family: Yanone, "Lato", sans-serif;
   color: #321602;
   margin-bottom: 1rem;
   margin-left: 2rem;
@@ -486,6 +486,12 @@ body {
     @media only screen and (max-width: 25em) {
       .list__item--acomp {
         font-size: .8rem; } }
+  .list__item__box {
+    position: relative; }
+  .list__item__box:hover .list__item__description {
+    transform: translateY(110%);
+    opacity: 1;
+    visibility: visible; }
   .list__item__box, .list__item--acomp {
     color: #321602; }
     .list__item__box::after, .list__item--acomp::after {
@@ -512,6 +518,23 @@ body {
   .list__item__money, .list__item__value {
     display: block;
     width: 5rem; }
+  .list__item__description {
+    padding: 2px 4px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    font-size: 1.2rem;
+    width: 85%;
+    font-weight: 100;
+    color: #e0d8c3;
+    background-color: #321602;
+    border-radius: 3px;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(140%);
+    transition: .4s;
+    z-index: 1; }
 
 .maps {
   display: block;

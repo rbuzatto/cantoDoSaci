@@ -21,6 +21,10 @@ var singleItemTag = function singleItemTag(item) {
     return '<span class="list__item__name">' + item + '</span>';
 };
 
+var singleItemDescriptionTag = function singleItemTag(item) {
+    return '<span class="list__item__description">' + item + '</span>';
+};
+
 var singleItemPriceTag = function singleItemPriceTag(item) {
     var tagMoney = '<span class"list__item__money">R$</span>';
     var tagItem = '';
@@ -85,14 +89,24 @@ var divWraper = function divWraper(wraperTxt) {
 
 var tagLiItem = function tagLiItem(item) {
     var txt = '';
-    if (item.price === '' || item.price === 0) {
-        txt = singleItemTag(item.name);
-        // let tagText = '<li class="list__item"><div class="list__item__box">' + singleItemTag(item.name) + '</div></li>';
-        // return tagText;
+
+    if (item.description) {
+        if (item.price === '' || item.price === 0) {
+            txt = singleItemTag(item.name) + singleItemDescriptionTag(item.description);
+        } else {
+            txt = singleItemTag(item.name) + singleItemPriceTag(item.price) + singleItemDescriptionTag(item.description);
+        }
+
     } else {
-        txt = singleItemTag(item.name) + singleItemPriceTag(item.price);
-        // let tagText = '<li class="list__item"><div class="list__item__box">' + singleItemTag(item.name) + singleItemPriceTag(item.price) + '</div></li>';
-        // return tagText;
+        if (item.price === '' || item.price === 0) {
+            txt = singleItemTag(item.name);
+            // let tagText = '<li class="list__item"><div class="list__item__box">' + singleItemTag(item.name) + '</div></li>';
+            // return tagText;
+        } else {
+            txt = singleItemTag(item.name) + singleItemPriceTag(item.price);
+            // let tagText = '<li class="list__item"><div class="list__item__box">' + singleItemTag(item.name) + singleItemPriceTag(item.price) + '</div></li>';
+            // return tagText;
+        }
     }
 
     return liWraper(txt);

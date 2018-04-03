@@ -1,7 +1,7 @@
 .list {
 
     &__title {
-        font-family: Seriffic, "Lato", sans-serif;
+        font-family: Yanone, "Lato", sans-serif;
         color: $color-primary-dark;
         margin-bottom: 1rem;
         margin-left: 2rem;
@@ -65,6 +65,14 @@
 
         }
 
+        &__box {position: relative;}
+
+        &__box:hover &__description {
+            transform: translateY(110%);
+            opacity: 1;
+            visibility: visible;
+        }
+
         &__box, 
         &--acomp {
             @include clearfix;
@@ -92,6 +100,25 @@
         &__value {
             display: block;
             width: 5rem;
+        }
+
+        &__description {
+            padding: 2px 4px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            font-size: 1.2rem;
+            width: 85%;
+            font-weight: 100;
+            color: $color-logo-bkgd;
+            background-color: $color-primary-dark;
+            border-radius: 3px;
+            box-shadow: 1px 1px 2px rgba($color-black, .7);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(140%);
+            transition: .4s;
+            z-index: 1;
         }
 
     }
