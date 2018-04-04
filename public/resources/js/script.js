@@ -243,10 +243,10 @@ $(document).ready(function () {
 
     function messageSent(data) {
     $('.form__sent__box').fadeIn();
-    $(this)[0].reset();
+    $('#js--contact')[0].reset();
     setTimeout(function () {
       $('.form__sent__box').fadeOut();
-    }, 3000);}
+    }, 3000);};
   });
 
     /* --- GALLERY IMAGE ---*/
@@ -258,7 +258,7 @@ $(document).ready(function () {
   function scope() {
     var i = 0;
     var gall;
-    var figure = '.gallery__img__box';
+    var figure = '.js--gallery-picture';
   for(i; i < $('.gallery__page').length; i++) {
     gall = $('.gallery__page')[i];
     $($(gall).find($(figure))[0]).css('display', 'block');
@@ -269,7 +269,7 @@ $(document).ready(function () {
   var galleryImageFade = 300
 $('.js--gallery-img--next').click(function(e) {
   var i = currentGallery - 1 ;
-  var figure = '.gallery__img__box';
+  var figure = '.js--gallery-picture';
   var currentPage = $('.gallery__page--' + currentGallery);
   var galleryImg = galleryImgArray[i];
   var imgs = $(currentPage.find(figure));
@@ -292,7 +292,7 @@ $('.js--gallery-img--next').click(function(e) {
 
 $('.js--gallery-img--prev').click(function(e) {
   var i = currentGallery - 1 ;
-  var figure = '.gallery__img__box';
+  var figure = '.js--gallery-picture';
   var currentPage = $('.gallery__page--' + currentGallery);
   var galleryImg = galleryImgArray[i];
   var imgs = $(currentPage.find(figure));

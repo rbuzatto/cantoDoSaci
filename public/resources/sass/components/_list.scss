@@ -103,7 +103,7 @@
         }
 
         &__description {
-            padding: 2px 4px;
+            padding: .4rem .6rem;
             position: absolute;
             bottom: 0;
             left: 0;
@@ -119,6 +119,10 @@
             transform: translateY(140%);
             transition: .4s;
             z-index: 1;
+
+            
+        @include respond (phone) { font-size: 1.0rem;}
+        @include respond (xxs-phone) { font-size: .8rem;}
         }
 
     }

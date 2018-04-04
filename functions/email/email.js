@@ -3,7 +3,7 @@ const nodemailer = require('nodemailer');
 let sendEmail = function(contact) {
     return new Promise((resolve, reject) => {
         let subject = `
-        Nova Mensagem de: ${contact.name} 
+        Canto do Saci (contato site): ${contact.name}
         `;
 
         let html = `
@@ -19,14 +19,14 @@ let sendEmail = function(contact) {
             port: 465,
             secure: true,
             auth: {
-                user: 'mightyrafa@gmail.com',
-                pass: 'Rnoel#339:'
+                user: 'cozinhacantodosaci@gmail.com',
+                pass: 'corifeu1880'
             }
         });
         
         let mailOptions = {
-            from: '"node" <mightyrafa@gmail.com>',
-            to:'mightyrafa@yahoo.com.br',
+            from: '"Contato:site" <cozinhacantodosaci@gmail.com>',
+            to:'cozinhacantodosaci@gmail.com',
             subject,
             html
         }

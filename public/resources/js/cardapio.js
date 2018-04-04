@@ -68,8 +68,12 @@ var cafe = [{
     price: 10,
     group: 'cafe'
 }, {
+    name: '2 Ovos Mexidos',
+    price: 5,
+    group: 'cafe'
+}, {
     name: '2 Ovos Mexidos com proteína (bacon ou cogumelos)',
-    price: 10,
+    price: 8,
     group: 'cafe'
 }, {
     name: 'Tapioca Doce ou Salgada',
