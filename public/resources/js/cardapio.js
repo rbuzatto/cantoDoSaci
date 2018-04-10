@@ -73,7 +73,7 @@ var cafe = [{
     group: 'cafe'
 }, {
     name: '2 Ovos Mexidos com proteína (bacon ou cogumelos)',
-    price: 8,
+    price: 10,
     group: 'cafe'
 }, {
     name: 'Tapioca Doce ou Salgada',
@@ -142,11 +142,6 @@ var cafeEspecial = [{
 /* --- GRELHADOS --- */
 
 var grelhados = [{
-    name: 'Abobrinha ou Berinjela Vegana',
-    price: 22,
-    description: '(temperada com sal, pimenta do reino e orégano fresco, grelhadas no azeite)',
-    group: 'grelhados'
-}, {
     name: 'Contrafilé',
     price: 24,
     description: '(temprado com sal e pimenta do reino, grelhado na hora no azeite)',
@@ -372,14 +367,6 @@ var sobremesa = [{
     price: 8,
     group: 'sobremesa'
 }, {
-    name: 'Torta de Queijo (fatia)',
-    price: 12,
-    group: 'sobremesa'
-}, {
-    name: 'Bolo Quente com Sorvete',
-    price: 12,
-    group: 'sobremesa'
-}, {
     name: 'Açaí com Granola na Tigela',
     price: 12,
     group: 'sobremesa'
@@ -602,6 +589,11 @@ var doSaci = [{
     price: '',
     description: '(2 ovos com muçarela, tomate e cheiro verde, ou legumes)',
     group: 'doSaci'
+}, {
+    name: 'Abobrinha ou Berinjela Vegana',
+    price: '',
+    description: '(temperada com sal, pimenta do reino e orégano fresco, grelhadas no azeite)',
+    group: 'grelhados'
 }, {
     name: 'Shimeji Vegano',
     price: '',
