@@ -33,7 +33,7 @@ var singleItemPriceTag = function singleItemPriceTag(item) {
     if (typeof item === 'number' && Number.isInteger(item)) {
         tagItem = '<span class"list__item__value">' + item + ',00</span>';
     } else if (typeof item === 'number' && !Number.isInteger(item)) {
-        replaceDot = ('' + item).replace('.', ',');
+        replaceDot = ('' + item.toFixed(2)).replace('.', ',');
         tagItem = '<span class"list__item__value">' + replaceDot + '</span>';
     } else if ((typeof item === 'undefined' ? 'undefined' : _typeof(item)) === 'object') {
         item.forEach(function (item, idx, arr) {

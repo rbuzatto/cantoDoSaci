@@ -39,12 +39,12 @@ var cafe = [{
     group: 'cafe'
 }, {
     name: 'Azulão',
-    price: 11,
+    price: 12,
     description: '(pão de queijo + fatia de bolo + expresso)',
     group: 'cafe'
 }, {
-    name: 'Bicudo',
-    price: 11,
+    name: 'Tico Tico',
+    price: 12,
     description: '(tapioca + café coado)',
     group: 'cafe'
 }, {
@@ -52,7 +52,15 @@ var cafe = [{
     price: 3,
     group: 'cafe'
 }, {
+    name: 'Pão de Queijo',
+    price: 5,
+    group: 'cafe'
+}, {
     name: 'Minas Quente',
+    price: 8,
+    group: 'cafe'
+}, {
+    name: 'Misto Quente c/ queijo e presunto',
     price: 8,
     group: 'cafe'
 }, {
@@ -76,11 +84,11 @@ var cafe = [{
     price: 10,
     group: 'cafe'
 }, {
-    name: 'Tapioca Doce ou Salgada',
+    name: 'Tapioca Recheada Doce ou Salgada',
     price: 10,
     group: 'cafe'
 }, {
-    name: 'Bolo Fatia',
+    name: 'Bolo (fatia)',
     price: 4,
     group: 'cafe'
 }, {
@@ -108,27 +116,31 @@ var cafe = [{
     price: 6,
     group: 'cafe'
 }, {
-    name: 'Café Expresso',
-    price: 4,
+    name: 'Café Master Expresso&reg;',
+    price: 4.50,
+    group: 'cafe'
+}, {
+    name: 'Café Cia Orgânica&reg;',
+    price: 5.50,
     group: 'cafe'
 }, {
     name: 'Café Expresso com Leite',
-    price: 6,
+    price: 6.30,
     group: 'cafe'
 }, {
     name: 'Café Coador com ou sem Leite',
-    price: 3,
+    price: 3.50,
     group: 'cafe'
 }, {
-    name: 'Chocolate Quente com Cacau meio Amargo',
+    name: 'Chocolate Quente com Cacau meio Amargo Sicao&reg;',
+    price: 6,
+    group: 'cafe'
+}, {
+    name: 'Cappuccino com Chocolate meio Amargo Sicao&reg;',
     price: 7,
     group: 'cafe'
 }, {
-    name: 'Caouccino com Chocolate meio Amargo',
-    price: 8,
-    group: 'cafe'
-}, {
-    name: 'Chá',
+    name: 'Chá Orgânico',
     price: 5,
     group: 'cafe'
 }];
@@ -180,9 +192,14 @@ var especiais = [{
     description: '(temperado com sal e pimenta do reino, grelhado no azeite e finalizada no molho de tomate da casa e queijo muçarela)',
     group: 'especiais'
 }, {
-    name: 'Parmegiana Magra de Filé de Frango Korin',
+    name: 'Parmegiana Magra de Filé de Frango Korin&reg;',
     price: 28,
     description: '(temperado com sal, limão e curry, grelhado no azeite e finalizado com molho de tomate da casa e queijo muçarela)',
+    group: 'especiais'
+}, {
+    name: 'Parmegiana Magra de Filé Mignon',
+    price: 34,
+    description: '(temperado com sal e pimenta do reino, grelhado no azeite e finalizada no molho de tomate da casa e queijo muçarela)',
     group: 'especiais'
 }];
 
@@ -270,12 +287,17 @@ var pratoLowCarb = [{
     description: '(Alface, ervilhas, cenoura ralada, tomates, legumes, grelhados e ovo cozido opcional)',
     group: 'lowCarb'
 }, {
+    name: 'Com Queijo Branco ou Minas Padrão',
+    price: 24,
+    description: '(fresco ou grelhado)',
+    group: 'lowCarb'
+}, {
     name: 'Com Tiras de Fraldinha',
     price: 26,
     description: '(temperada com sal e pimenta do reino, salteada no azeite)',
     group: 'lowCarb'
 }, {
-    name: 'Com Tiras de Filé de Frango Korin',
+    name: 'Com Tiras de Filé de Frango Korin&reg;',
     price: 26,
     description: '(temperada com limão, sal, curry, mostarda e gergelim, salteada no azeite)',
     group: 'lowCarb'
@@ -285,7 +307,7 @@ var pratoLowCarb = [{
     description: '(shitake, shimeji e paris fatiados, sateados no óleo de gergelim, finalizados no shoyo e cebolinha)',
     group: 'lowCarb'
 }, {
-    name: 'Com Tilápia a Doré',
+    name: 'Com Tilápia a Dorê',
     price: 35,
     description: '(temperada com sal, pimenta do reino e raspas de limão, empanado na farinha ou fubá, grelhado no azeite)',
     group: 'lowCarb'
@@ -323,10 +345,10 @@ var massas = [{
 }, {
     name: 'Capeletti in brodo',
     price: 30,
-    description: '(produzida na casa, com frango Korin)',
+    description: '(produzida na casa, com frango Korin&reg;)',
     group: 'massas'
 }, {
-    name: 'Massa Grano Duro sem Ovos Vegana',
+    name: 'Massa Grano Duro Barilla&reg; sem Ovos Vegana',
     price: 24,
     description: '(escolhida com cuidado por não conter traços de ovos)',
     group: 'massas'
@@ -335,11 +357,11 @@ var massas = [{
 /* --- SOBREMESAS --- */
 
 var sobremesa = [{
-    name: 'Pudim',
+    name: 'Pudim Tradicional',
     price: 6,
     group: 'sobremesa'
 }, {
-    name: 'Brigadeiro',
+    name: 'Brigadeiro com Sicao&reg;',
     price: 5,
     group: 'sobremesa'
 }, {
@@ -355,6 +377,10 @@ var sobremesa = [{
     price: 4,
     group: 'sobremesa'
 }, {
+    name: 'Bolo do Saci Recheado',
+    price: 7,
+    group: 'sobremesa'
+}, {
     name: 'Torta Doce (fatia)',
     price: 6,
     group: 'sobremesa'
@@ -364,7 +390,7 @@ var sobremesa = [{
     group: 'sobremesa'
 }, {
     name: 'Creme de Papaia com Licor',
-    price: 8,
+    price: 10,
     group: 'sobremesa'
 }, {
     name: 'Açaí com Granola na Tigela',
@@ -392,6 +418,10 @@ var quituteria = [{
     group: 'quituteria'
 }, {
     name: 'Empada',
+    price: 6,
+    group: 'quituteria'
+}, {
+    name: 'Esfiha',
     price: 6,
     group: 'quituteria'
 }];
@@ -436,7 +466,7 @@ var sanduiche = [{
     price: 12,
     group: 'sanduiche'
 }, {
-    name: 'Sanduíche Frango',
+    name: 'Sanduíche Frango Korin&reg;',
     price: 12,
     group: 'sanduiche'
 }, {
@@ -459,7 +489,7 @@ var horaFeliz = [{
     group: 'hora feliz'
 }, {
     name: 'Iscas de Tilápia Empanada',
-    price: 32,
+    price: 36,
     description: '(temperadas com sal, pimenta do reino e raspas de limão, empanadas na panko e fritas. acompanha 2 molhos)',
     group: 'hora feliz'
 }, {
@@ -468,7 +498,7 @@ var horaFeliz = [{
     description: '(iscas de mignon temperadas com sal e pimenta do reino, salteada no azeite ou manteiga)',
     group: 'hora feliz'
 }, {
-    name: 'Frango a Passarinho Korin',
+    name: 'Frango a Passarinho Korin&reg;',
     price: 36,
     description: '(22 pedaços de frango cuidadosamente temperados com sal e especiarias, coberto com alho frito, servido com limão cravo. acompanha 2 molhos)',
     group: 'hora feliz'
@@ -482,11 +512,11 @@ var horaFeliz = [{
 /* --- BEBIDAS --- */
 
 var bebidas = [{
-    name: 'Água',
+    name: 'Água Natural sem Gás',
     price: 3,
     group: 'bebidas'
 }, {
-    name: 'Água com Gás',
+    name: 'Água Natural com Gás',
     price: 4,
     group: 'bebidas'
 }, {
@@ -510,23 +540,31 @@ var bebidas = [{
     price: 10,
     group: 'bebidas'
 }, {
-    name: 'Café Expresso',
-    price: 4,
+    name: 'Café Master Expresso&reg;',
+    price: 4.5,
     group: 'bebidas'
 }, {
-    name: 'Expresso Duplo',
-    price: 8,
+    name: 'Café Cia Orgânica&reg;',
+    price: 5.5,
     group: 'bebidas'
 }, {
-    name: 'Capuccino ou café com leite',
-    price: [6, 8],
+    name: 'Café Expresso com Leite',
+    price: 6.3,
     group: 'bebidas'
 }, {
-    name: 'Chocolate',
-    price: [6, 8],
+    name: 'Café Coado com ou sem Leite',
+    price: 3.5,
     group: 'bebidas'
 }, {
-    name: 'Chá',
+    name: 'Chocolate quente com Cacau meio Amargo Sicao&reg;',
+    price: 6,
+    group: 'bebidas'
+}, {
+    name: 'Capuccino com Chocolate meio Amargo Sicao&reg;',
+    price: 7,
+    group: 'bebidas'
+}, {
+    name: 'Chá Orgânico',
     price: 5,
     group: 'bebidas'
 }, {
@@ -554,7 +592,7 @@ var bebidas = [{
     price: 10,
     group: 'bebidas'
 }, {
-    name: 'Smirnoff Ice',
+    name: 'Smirnoff Ice&reg;',
     price: 10,
     group: 'bebidas'
 }, {
@@ -570,7 +608,7 @@ var bebidas = [{
     price: 26,
     group: 'bebidas'
 }, {
-    name: 'Caipirinha do Saci - boazinha ou vodka',
+    name: 'Caipirinha do Saci - Boazinha&reg; ou vodka',
     price: 18,
     group: 'bebidas'
 }, {
@@ -625,7 +663,7 @@ var acompanhamentos = ['Arroz Branco ou Integral', 'Feijão do Dia', 'Farofa do 
 
 /* --- MOLHOS --- */
 
-var molhos = ['Sugo da Casa', 'Alfredo', 'Pesto', 'Manteiga de Sálvia'];
+var molhos = ['Sugo', 'Bolonhesa', 'Alfredo', 'Pesto', 'Manteiga de Sálvia'];
 
 /* --- precos do grupo --- */
 
