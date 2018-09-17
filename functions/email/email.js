@@ -1,4 +1,5 @@
 const nodemailer = require('nodemailer');
+const { user, pass } = require('./../.data/config');
 
 let sendEmail = function(contact) {
     return new Promise((resolve, reject) => {
@@ -18,15 +19,12 @@ let sendEmail = function(contact) {
             host: 'smtp.gmail.com',
             port: 465,
             secure: true,
-            auth: {
-                user: 'cozinhacantodosaci@gmail.com',
-                pass: 'corifeu1880'
-            }
+            auth: { user, pass }
         });
         
         let mailOptions = {
-            from: '"Contato:site" <cozinhacantodosaci@gmail.com>',
-            to:'cozinhacantodosaci@gmail.com',
+            from: `"Contato:site" <${user}>`,
+            to: user,
             subject,
             html
         }
